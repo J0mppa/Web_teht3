@@ -1,17 +1,31 @@
-console.log("Sivu ladattu");
-const nappi = document.querySelector("#nappi");
-const klikkaukset = document.querySelector("#klikkaukset");
-let klikit = 0;
+const klikkausnappi = document.querySelector("#klikkausnappi");
+const autoclickernappi = document.querySelector("#autoclickernappi");
+const pistelukema = document.querySelector("#pisteet");
+const autoclickerlukema = document.querySelector("#autoclickerit");
+let pisteet = 0;
+let autoclickerit = 0;
 
 function refresh() {
- klikkaukset.textContent = klikit;
+    pistelukema.textContent = pisteet;
+    autoclickerlukema.textContent = autoclickerit;
 }
 
-function lisaa_klikki(){
-    klikit++;
+function lisaa_klikkaus(){
+    pisteet++;
     refresh();
 }
 
-nappi.addEventListener("click", lisaa_klikki)
+function osta_autoclicker(){
+    autoclickerit+=1;
+    refresh();
+}
+
+klikkausnappi.addEventListener("click", lisaa_klikkaus);
+autoclickernappi.addEventListener("click", osta_autoclicker);
+
+setInterval(() => {
+  pisteet += autoclickerit;
+  refresh();
+}, 1000);
 
 refresh();
