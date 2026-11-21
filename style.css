@@ -5,3 +5,11 @@ body {
 button{
     display:block;
 }
+
+#paivitys_1{
+    display:none;
+}
+
+#paivitys_1.show{
+    display:block;
+}

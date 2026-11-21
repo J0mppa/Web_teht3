@@ -12,8 +12,8 @@ const paivitykset = [
 ];
 
 const autoclickerit = [
-    {nimi: "autoclicker1", tiedot: {hinta: 5, nappi: autoclickernappi_1, maara: 0}},
-    {nimi: "autoclicker2", tiedot: {hinta: 5, nappi: autoclickernappi_2, maara: 0}}
+    {nimi: "autoclicker1", tiedot: {hinta: 5, nappi: autoclickernappi_1, maara: 0, pistemaara: 1}},
+    {nimi: "autoclicker2", tiedot: {hinta: 10, nappi: autoclickernappi_2, maara: 0, pistemaara: 2}}
 ];
 
 
@@ -22,7 +22,14 @@ const autoclickerit = [
 function refresh() {
     pistelukema.textContent = pisteet;
     autoclickerlukema.textContent = autoclickerit[0].tiedot.maara;
+    lisaa_autoclickerpisteet();
     tarkasta_nappi(paivitykset);
+    tarkasta_nappi(autoclickerit);
+}
+
+function lisaa_autoclickerpisteet(){
+    for (const autoclicker of autoclickerit)
+        pisteet += autoclicker.tiedot.maara*autoclicker.tiedot.pistemaara;
 }
 
 function tarkasta_hinta(hinta){
@@ -30,6 +37,14 @@ function tarkasta_hinta(hinta){
         return true;
     } else {
         return false;
+    }
+}
+
+function hae_tiedot(nimi, array){
+    for (const rivi of array){
+        if (rivi.nimi === nimi){
+            return rivi.tiedot;
+        }
     }
 }
 
@@ -50,25 +65,21 @@ function lisaa_klikkaus(){
 }
 
 function osta_autoclicker(nimi){
-    for (const rivi of autoclickerit){
-        if (rivi.nimi === nimi){
-            rivi.tiedot.maara += 1;
-            pisteet -= rivi.tiedot.hinta;
-            rivi.tiedot.hinta = rivi.tiedot.hinta*1.1
-            break;
-        }
-    }
+    let tiedot = hae_tiedot(nimi, autoclickerit);
+    
+    tiedot.maara += 1;
+    pisteet -= tiedot.hinta;
+    tiedot.hinta = tiedot.hinta*1.1
+    
     refresh();
 }
 
 function osta_paivitys(nimi){
-    for (const rivi of paivitykset){
-        if (rivi.nimi === nimi){
-            rivi.tiedot.ostettu = true;
-            pisteet -= rivi.tiedot.hinta;
-            break;
-        }
-    }
+    let tiedot = hae_tiedot(nimi, paivitykset);
+
+    tiedot.ostettu = true;
+    pisteet -= tiedot.hinta;
+            
     refresh();
 }
 
@@ -76,9 +87,11 @@ klikkausnappi.addEventListener("click", lisaa_klikkaus);
 autoclickernappi_1.addEventListener("click", () =>{
     osta_autoclicker("autoclicker1");
 });
+autoclickernappi_2.addEventListener("click", () =>{
+    osta_autoclicker("autoclicker2");
+});
 
 setInterval(() => {
-    pisteet += autoclickerit[0].tiedot.maara;
     refresh();
 }, 1000);
 
