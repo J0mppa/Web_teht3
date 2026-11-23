@@ -35,7 +35,6 @@ button{
 }
 
 .paivitykset{
-    display: none;
     background-color: red;
     border: 1px solid black;
     color: white;
@@ -46,9 +45,6 @@ button{
     width: 100%;
 }
 
-.paivitykset.show{
-    display:block;
-}
 
 .paivitykset.disable{
     color: rgb(0, 0, 0);
@@ -57,7 +53,6 @@ button{
 }
 
 .autoclickerit{
-    display: block;
     background-color: red;
     border: 1px solid black;
     color: white;
@@ -69,12 +64,25 @@ button{
     
 }
 
-.autoclickerit.show{
-    display:none;
-}
 
 .autoclickerit.disable{
     color: rgb(0, 0, 0);
     background-color: rgb(92, 92, 92);
     opacity: 50%;
+}
+
+#paivityskauppa{
+    display: none;
+}
+
+#paivityskauppa.show{
+    display: block;
+}
+
+#autoclickerkauppa{
+    display: block;
+}
+
+#autoclickerkauppa.show{
+    display: none;
 }

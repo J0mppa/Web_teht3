@@ -5,12 +5,17 @@ const pistelukema = document.querySelector("#pisteet");
 const autoclickerlukema = document.querySelector("#autoclickermaara");
 const paivitys_1_nappi = document.querySelector(".paivitys_1");
 const paivitys_2_nappi = document.querySelector(".paivitys_2");
-const autoclicker_kauppa = document.querySelector(".autoclicker");
-const paivitys_kauppa = document.querySelector(".paivitys");
+const autoclicker_kauppa_nappi = document.querySelector(".autoclicker");
+const paivitys_kauppa_nappi = document.querySelector(".paivitys");
 const autoclickernapit = document.querySelectorAll(".autoclickerit")
 const paivitysnapit = document.querySelectorAll(".paivitykset")
 const hinta_autoclicker_1 = document.querySelector("#hinta_autoclicker_1")
 const hinta_autoclicker_2 = document.querySelector("#hinta_autoclicker_2")
+const maara_autoclicker_1 = document.querySelector("#maara_autoclicker_1")
+const maara_autoclicker_2 = document.querySelector("#maara_autoclicker_2")
+const paivityskauppa = document.querySelector("#paivityskauppa")
+const autoclickerkauppa = document.querySelector("#autoclickerkauppa")
+
 
 
 let pisteet = 0;
@@ -28,7 +33,8 @@ const autoclickerit_lista = [
 
 
 function refresh() {
-    autoclickerlukema.textContent = autoclickerit_lista[0].tiedot.maara;
+    maara_autoclicker_1.textContent = autoclickerit_lista[0].tiedot.maara;
+    maara_autoclicker_2.textContent = autoclickerit_lista[1].tiedot.maara;
     hinta_autoclicker_1.textContent = autoclickerit_lista[0].tiedot.hinta;
     hinta_autoclicker_2.textContent = autoclickerit_lista[1].tiedot.hinta;
     lisaa_autoclickerpisteet();
@@ -102,22 +108,14 @@ autoclickernappi_1.addEventListener("click", () =>{
 autoclickernappi_2.addEventListener("click", () =>{
     osta_autoclicker("autoclicker2");
 });
-autoclicker_kauppa.addEventListener("click", () =>{
-    for (const napit of autoclickernapit){
-        napit.classList.remove("show");
-    } 
-    for (const napit of paivitysnapit){
-        napit.classList.remove("show");
-    } 
+autoclicker_kauppa_nappi.addEventListener("click", () =>{
+    autoclickerkauppa.classList.remove("show");
+    paivityskauppa.classList.remove("show"); 
     
 });
-paivitys_kauppa.addEventListener("click", () =>{
-    for (const napit of autoclickernapit){
-        napit.classList.add("show");
-    } 
-    for (const napit of paivitysnapit){
-        napit.classList.add("show");
-    } 
+paivitys_kauppa_nappi.addEventListener("click", () =>{
+    autoclickerkauppa.classList.add("show");
+    paivityskauppa.classList.add("show");
 });
 
 setInterval(() => {
