@@ -1,15 +1,20 @@
 body {
     background-color: lightblue;
+    margin:0;
+    display: flex;
+    height: 100vh;
+}
+
+#kauppa{
+    width: 20%;
+    background-color: rgba(195, 135, 25, 0.878);
+    border-right: 2px solid black;
+}
+
+#pelialue{
 }
 
 button{
     display:block;
 }
 
-#paivitys_1{
-    display:none;
-}
-
-#paivitys_1.show{
-    display:block;
-}
