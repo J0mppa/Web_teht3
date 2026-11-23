@@ -9,6 +9,9 @@ const autoclicker_kauppa = document.querySelector(".autoclicker");
 const paivitys_kauppa = document.querySelector(".paivitys");
 const autoclickernapit = document.querySelectorAll(".autoclickerit")
 const paivitysnapit = document.querySelectorAll(".paivitykset")
+const hinta_autoclicker_1 = document.querySelector("#hinta_autoclicker_1")
+const hinta_autoclicker_2 = document.querySelector("#hinta_autoclicker_2")
+
 
 let pisteet = 0;
 const paivitykset_lista = [
@@ -26,6 +29,8 @@ const autoclickerit_lista = [
 
 function refresh() {
     autoclickerlukema.textContent = autoclickerit_lista[0].tiedot.maara;
+    hinta_autoclicker_1.textContent = autoclickerit_lista[0].tiedot.hinta;
+    hinta_autoclicker_2.textContent = autoclickerit_lista[1].tiedot.hinta;
     lisaa_autoclickerpisteet();
     tarkasta_nappi(paivitykset_lista);
     tarkasta_nappi(autoclickerit_lista);
@@ -57,8 +62,10 @@ function tarkasta_nappi(array){
     for (const rivi of array){
         if (tarkasta_hinta(rivi.tiedot.hinta) && !rivi.tiedot.ostettu){
             rivi.tiedot.nappi.disabled = false;
+            rivi.tiedot.nappi.classList.remove("disable")
         } else {
             rivi.tiedot.nappi.disabled = true;
+            rivi.tiedot.nappi.classList.add("disable")
         }
     }
 }

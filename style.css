@@ -36,16 +36,45 @@ button{
 
 .paivitykset{
     display: none;
+    background-color: red;
+    border: 1px solid black;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
 }
 
 .paivitykset.show{
     display:block;
 }
 
+.paivitykset.disable{
+    color: rgb(0, 0, 0);
+    background-color: rgb(92, 92, 92);
+    opacity: 50%;
+}
+
 .autoclickerit{
     display: block;
+    background-color: red;
+    border: 1px solid black;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    
 }
 
 .autoclickerit.show{
     display:none;
+}
+
+.autoclickerit.disable{
+    color: rgb(0, 0, 0);
+    background-color: rgb(92, 92, 92);
+    opacity: 50%;
 }
