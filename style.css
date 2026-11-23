@@ -16,5 +16,36 @@ body {
 
 button{
     display:block;
+    margin-bottom: 10px;
 }
 
+.kauppa{
+    background-color: red;
+    border: 1px solid black;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+#kauppanapit{
+    display: flex;
+}
+
+.paivitykset{
+    display: none;
+}
+
+.paivitykset.show{
+    display:block;
+}
+
+.autoclickerit{
+    display: block;
+}
+
+.autoclickerit.show{
+    display:none;
+}
