@@ -16,8 +16,8 @@ const maara_autoclicker_2 = document.querySelector("#maara_autoclicker_2")
 const paivityskauppa = document.querySelector("#paivityskauppa")
 const autoclickerkauppa = document.querySelector("#autoclickerkauppa")
 
-
-
+let kokonaisklikkaukset = 0;
+let klikkauskerroin = 1;
 let pisteet = 0;
 const paivitykset_lista = [
     {nimi: "paivitys1", tiedot: {hinta: 50, nappi: paivitys_1_nappi, ostettu: false}},
@@ -30,8 +30,6 @@ const autoclickerit_lista = [
 ];
 
 
-
-
 function refresh() {
     maara_autoclicker_1.textContent = autoclickerit_lista[0].tiedot.maara;
     maara_autoclicker_2.textContent = autoclickerit_lista[1].tiedot.maara;
@@ -42,6 +40,8 @@ function refresh() {
     tarkasta_nappi(autoclickerit_lista);
     pistelukema.textContent = pisteet;
 }
+
+
 
 function lisaa_autoclickerpisteet(){
     for (const autoclicker of autoclickerit_lista)
@@ -78,7 +78,14 @@ function tarkasta_nappi(array){
 
 
 function lisaa_klikkaus(){
-    pisteet++;
+    pisteet += klikkauskerroin;
+    kokonaisklikkaukset++;
+    if (kokonaisklikkaukset === 10){
+        paivitys_1_nappi.classList.add("show");
+    }
+    if (kokonaisklikkaukset === 50){
+        paivitys_2_nappi.classList.add("show");
+    }
     refresh();
 }
 
@@ -101,6 +108,15 @@ function osta_paivitys(nimi){
     refresh();
 }
 
+function lisaa_paivitys_1(){
+    klikkauskerroin = klikkauskerroin*2;
+}
+function lisaa_paivitys_2(){
+    klikkauskerroin = klikkauskerroin*2;
+}
+
+
+
 klikkausnappi.addEventListener("click", lisaa_klikkaus);
 autoclickernappi_1.addEventListener("click", () =>{
     osta_autoclicker("autoclicker1");
@@ -117,6 +133,17 @@ paivitys_kauppa_nappi.addEventListener("click", () =>{
     autoclickerkauppa.classList.add("show");
     paivityskauppa.classList.add("show");
 });
+paivitys_1_nappi.addEventListener("click", () =>{
+    paivitys_1_nappi.classList.remove("show");
+    osta_paivitys("paivitys1");
+    lisaa_paivitys_1();
+});
+paivitys_2_nappi.addEventListener("click", () =>{
+    paivitys_2_nappi.classList.remove("show");
+    osta_paivitys("paivitys2");
+    lisaa_paivitys_2();
+});
+
 
 setInterval(() => {
     refresh();
