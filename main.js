@@ -87,7 +87,7 @@ function osta_autoclicker(nimi){
     
     tiedot.maara += 1;
     pisteet -= tiedot.hinta;
-    tiedot.hinta = tiedot.hinta*1.1
+    tiedot.hinta = Math.round(tiedot.hinta*1.3);
     
     refresh();
 }

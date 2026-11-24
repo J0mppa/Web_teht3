@@ -14,6 +14,16 @@ body {
 #pelialue{
 }
 
+
+#klikkausnappi{
+    width: 400px;
+    height: 400px;
+    background-image: url('pizza.png');
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
 button{
     display:block;
     margin-bottom: 10px;
