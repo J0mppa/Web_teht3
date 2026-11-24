@@ -11,6 +11,7 @@ const autoclicker_kauppa_nappi = document.querySelector(".autoclicker");
 const paivitys_kauppa_nappi = document.querySelector(".paivitys");
 const autoclickernapit = document.querySelectorAll(".autoclickerit")
 const paivitysnapit = document.querySelectorAll(".paivitykset")
+const avoimet_paivitykset_maara = document.querySelector("#avoimet_paivitykset")
 
 const hinta_autoclicker_1 = document.querySelector("#hinta_autoclicker_1")
 const hinta_autoclicker_2 = document.querySelector("#hinta_autoclicker_2")
@@ -28,9 +29,10 @@ const autoclickerkauppa = document.querySelector("#autoclickerkauppa")
 let kokonaisklikkaukset = 0;
 let klikkauskerroin = 1;
 let pisteet = 0;
+let avoimet_paivitykset = 0;
 const paivitykset_lista = [
-    {nimi: "paivitys1", tiedot: {hinta: 50, nappi: paivitys_1_nappi, ostettu: false}},
-    {nimi: "paivitys2", tiedot: {hinta: 50, nappi: paivitys_2_nappi, ostettu: false}}
+    {nimi: "paivitys1", tiedot: {hinta: 50, nappi: paivitys_1_nappi, ostettu: false, avattu: false}},
+    {nimi: "paivitys2", tiedot: {hinta: 50, nappi: paivitys_2_nappi, ostettu: false, avattu: false}}
 ];
 
 const autoclickerit_lista = [
@@ -55,7 +57,9 @@ function refresh() {
     lisaa_autoclickerpisteet();
     tarkasta_nappi(paivitykset_lista);
     tarkasta_nappi(autoclickerit_lista);
+    avaa_paivitykset();
     pistelukema.textContent = pisteet;
+    avoimet_paivitykset_maara.textContent = avoimet_paivitykset;
 }
 
 
@@ -93,16 +97,29 @@ function tarkasta_nappi(array){
     }
 }
 
+function avaa_paivitykset(){
+    if (kokonaisklikkaukset === 10){
+        paivitys_1_nappi.classList.add("show");
+        if (paivitykset_lista[0].tiedot.avattu === false){
+            avoimet_paivitykset += 1;
+        }
+        paivitykset_lista[0].tiedot.avattu = true;
+    }
+    if (kokonaisklikkaukset === 50){
+        paivitys_2_nappi.classList.add("show");
+        if (paivitykset_lista[1].tiedot.avattu === false){
+            avoimet_paivitykset += 1;
+        }
+        paivitykset_lista[1].tiedot.avattu = true;
+
+    }
+}
+
 
 function lisaa_klikkaus(){
     pisteet += klikkauskerroin;
     kokonaisklikkaukset++;
-    if (kokonaisklikkaukset === 10){
-        paivitys_1_nappi.classList.add("show");
-    }
-    if (kokonaisklikkaukset === 50){
-        paivitys_2_nappi.classList.add("show");
-    }
+
     refresh();
 }
 
@@ -121,6 +138,7 @@ function osta_paivitys(nimi){
 
     tiedot.ostettu = true;
     pisteet -= tiedot.hinta;
+    avoimet_paivitykset -= 1;
             
     refresh();
 }
