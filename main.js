@@ -9,27 +9,31 @@ const paivitys_1_nappi = document.querySelector(".paivitys_1");
 const paivitys_2_nappi = document.querySelector(".paivitys_2");
 const autoclicker_kauppa_nappi = document.querySelector(".autoclicker");
 const paivitys_kauppa_nappi = document.querySelector(".paivitys");
-const autoclickernapit = document.querySelectorAll(".autoclickerit")
-const paivitysnapit = document.querySelectorAll(".paivitykset")
-const avoimet_paivitykset_maara = document.querySelector("#avoimet_paivitykset")
+const autoclickernapit = document.querySelectorAll(".autoclickerit");
+const paivitysnapit = document.querySelectorAll(".paivitykset");
+const avoimet_paivitykset_maara = document.querySelector("#avoimet_paivitykset");
+const kokonaispistemaara = document.querySelector("#kokonaispisteet");
+const klikkausmaara = document.querySelector("#klikkausmaara");
+const pistenopeus = document.querySelector("#pistenopeus");
 
-const hinta_autoclicker_1 = document.querySelector("#hinta_autoclicker_1")
-const hinta_autoclicker_2 = document.querySelector("#hinta_autoclicker_2")
-const hinta_autoclicker_3 = document.querySelector("#hinta_autoclicker_3")
-const hinta_autoclicker_4 = document.querySelector("#hinta_autoclicker_4")
+const hinta_autoclicker_1 = document.querySelector("#hinta_autoclicker_1");
+const hinta_autoclicker_2 = document.querySelector("#hinta_autoclicker_2");
+const hinta_autoclicker_3 = document.querySelector("#hinta_autoclicker_3");
+const hinta_autoclicker_4 = document.querySelector("#hinta_autoclicker_4");
 
-const maara_autoclicker_1 = document.querySelector("#maara_autoclicker_1")
-const maara_autoclicker_2 = document.querySelector("#maara_autoclicker_2")
-const maara_autoclicker_3 = document.querySelector("#maara_autoclicker_3")
-const maara_autoclicker_4 = document.querySelector("#maara_autoclicker_4")
+const maara_autoclicker_1 = document.querySelector("#maara_autoclicker_1");
+const maara_autoclicker_2 = document.querySelector("#maara_autoclicker_2");
+const maara_autoclicker_3 = document.querySelector("#maara_autoclicker_3");
+const maara_autoclicker_4 = document.querySelector("#maara_autoclicker_4");
 
-const paivityskauppa = document.querySelector("#paivityskauppa")
-const autoclickerkauppa = document.querySelector("#autoclickerkauppa")
+const paivityskauppa = document.querySelector("#paivityskauppa");
+const autoclickerkauppa = document.querySelector("#autoclickerkauppa");
 
 let kokonaisklikkaukset = 0;
 let klikkauskerroin = 1;
 let pisteet = 0;
 let avoimet_paivitykset = 0;
+let kokonaispisteet = 0;
 const paivitykset_lista = [
     {nimi: "paivitys1", tiedot: {hinta: 50, nappi: paivitys_1_nappi, ostettu: false, avattu: false}},
     {nimi: "paivitys2", tiedot: {hinta: 50, nappi: paivitys_2_nappi, ostettu: false, avattu: false}}
@@ -59,14 +63,22 @@ function refresh() {
     tarkasta_nappi(autoclickerit_lista);
     avaa_paivitykset();
     pistelukema.textContent = pisteet;
+    klikkausmaara.textContent = kokonaisklikkaukset;
     avoimet_paivitykset_maara.textContent = avoimet_paivitykset;
+    kokonaispistemaara.textContent = kokonaispisteet;
 }
 
 
 
 function lisaa_autoclickerpisteet(){
-    for (const autoclicker of autoclickerit_lista)
-        pisteet += autoclicker.tiedot.maara*autoclicker.tiedot.pistemaara;
+    let lisattavat_pisteet = 0
+    for (const autoclicker of autoclickerit_lista){
+        lisattavat_pisteet += autoclicker.tiedot.maara*autoclicker.tiedot.pistemaara;
+    }
+    pistenopeus.textContent = lisattavat_pisteet;
+    pisteet += lisattavat_pisteet;
+    kokonaispisteet += lisattavat_pisteet;
+        
 }
 
 function tarkasta_hinta(hinta){
@@ -118,6 +130,7 @@ function avaa_paivitykset(){
 
 function lisaa_klikkaus(){
     pisteet += klikkauskerroin;
+    kokonaispisteet += klikkauskerroin;
     kokonaisklikkaukset++;
 
     refresh();
