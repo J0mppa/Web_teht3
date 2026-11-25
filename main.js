@@ -1,12 +1,6 @@
 const klikkausnappi = document.querySelector("#klikkausnappi");
-const autoclickernappi_1 = document.querySelector(".autoclickernappi_1");
-const autoclickernappi_2 = document.querySelector(".autoclickernappi_2");
-const autoclickernappi_3 = document.querySelector(".autoclickernappi_3");
-const autoclickernappi_4 = document.querySelector(".autoclickernappi_4");
 const pistelukema = document.querySelector("#pisteet");
 const autoclickerlukema = document.querySelector("#autoclickermaara");
-const paivitys_1_nappi = document.querySelector(".paivitys_1");
-const paivitys_2_nappi = document.querySelector(".paivitys_2");
 const autoclicker_kauppa_nappi = document.querySelector(".autoclicker");
 const paivitys_kauppa_nappi = document.querySelector(".paivitys");
 const autoclickernapit = document.querySelectorAll(".autoclickerit");
@@ -15,6 +9,22 @@ const avoimet_paivitykset_maara = document.querySelector("#avoimet_paivitykset")
 const kokonaispistemaara = document.querySelector("#kokonaispisteet");
 const klikkausmaara = document.querySelector("#klikkausmaara");
 const pistenopeus = document.querySelector("#pistenopeus");
+
+const autoclickernappi_1 = document.querySelector(".autoclickernappi_1");
+const autoclickernappi_2 = document.querySelector(".autoclickernappi_2");
+const autoclickernappi_3 = document.querySelector(".autoclickernappi_3");
+const autoclickernappi_4 = document.querySelector(".autoclickernappi_4");
+
+const paivitys_1_nappi = document.querySelector(".paivitys_1");
+const paivitys_2_nappi = document.querySelector(".paivitys_2");
+const autoclicker1_paivitys_1_nappi = document.querySelector(".autoclicker1_paivitys_1");
+const autoclicker1_paivitys_2_nappi = document.querySelector(".autoclicker1_paivitys_2");
+const autoclicker2_paivitys_1_nappi = document.querySelector(".autoclicker2_paivitys_1");
+const autoclicker2_paivitys_2_nappi = document.querySelector(".autoclicker2_paivitys_2");
+const autoclicker3_paivitys_1_nappi = document.querySelector(".autoclicker3_paivitys_1");
+const autoclicker3_paivitys_2_nappi = document.querySelector(".autoclicker3_paivitys_2");
+const autoclicker4_paivitys_1_nappi = document.querySelector(".autoclicker4_paivitys_1");
+const autoclicker4_paivitys_2_nappi = document.querySelector(".autoclicker4_paivitys_2");
 
 const hinta_autoclicker_1 = document.querySelector("#hinta_autoclicker_1");
 const hinta_autoclicker_2 = document.querySelector("#hinta_autoclicker_2");
@@ -36,7 +46,15 @@ let avoimet_paivitykset = 0;
 let kokonaispisteet = 0;
 const paivitykset_lista = [
     {nimi: "paivitys1", tiedot: {hinta: 50, nappi: paivitys_1_nappi, ostettu: false, avattu: false}},
-    {nimi: "paivitys2", tiedot: {hinta: 50, nappi: paivitys_2_nappi, ostettu: false, avattu: false}}
+    {nimi: "paivitys2", tiedot: {hinta: 50, nappi: paivitys_2_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker1_paivitys1", tiedot: {hinta: 50, nappi: autoclicker1_paivitys_1_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker1_paivitys2", tiedot: {hinta: 50, nappi: autoclicker1_paivitys_2_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker2_paivitys1", tiedot: {hinta: 50, nappi: autoclicker2_paivitys_1_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker2_paivitys2", tiedot: {hinta: 50, nappi: autoclicker2_paivitys_2_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker3_paivitys1", tiedot: {hinta: 50, nappi: autoclicker3_paivitys_1_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker3_paivitys2", tiedot: {hinta: 50, nappi: autoclicker3_paivitys_2_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker4_paivitys1", tiedot: {hinta: 50, nappi: autoclicker4_paivitys_1_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker4_paivitys2", tiedot: {hinta: 50, nappi: autoclicker4_paivitys_2_nappi, ostettu: false, avattu: false}}
 ];
 
 const autoclickerit_lista = [
@@ -58,7 +76,6 @@ function refresh() {
     hinta_autoclicker_3.textContent = autoclickerit_lista[2].tiedot.hinta;
     hinta_autoclicker_4.textContent = autoclickerit_lista[3].tiedot.hinta;
 
-    lisaa_autoclickerpisteet();
     tarkasta_nappi(paivitykset_lista);
     tarkasta_nappi(autoclickerit_lista);
     avaa_paivitykset();
@@ -111,22 +128,76 @@ function tarkasta_nappi(array){
 
 function avaa_paivitykset(){
     if (kokonaisklikkaukset === 10){
-        paivitys_1_nappi.classList.add("show");
         if (paivitykset_lista[0].tiedot.avattu === false){
             avoimet_paivitykset += 1;
+            paivitys_1_nappi.classList.add("show");
         }
         paivitykset_lista[0].tiedot.avattu = true;
     }
     if (kokonaisklikkaukset === 50){
-        paivitys_2_nappi.classList.add("show");
         if (paivitykset_lista[1].tiedot.avattu === false){
             avoimet_paivitykset += 1;
+            paivitys_2_nappi.classList.add("show");
         }
         paivitykset_lista[1].tiedot.avattu = true;
-
+    }
+    if (autoclickerit_lista[0].tiedot.maara === 10){
+        if (paivitykset_lista[2].tiedot.avattu === false){
+            avoimet_paivitykset += 1;
+            autoclicker1_paivitys_1_nappi.classList.add("show");
+        }
+        paivitykset_lista[2].tiedot.avattu = true;
+    }
+    if (autoclickerit_lista[0].tiedot.maara === 20){
+        if (paivitykset_lista[3].tiedot.avattu === false){
+            avoimet_paivitykset += 1;
+            autoclicker1_paivitys_2_nappi.classList.add("show");
+        }
+        paivitykset_lista[3].tiedot.avattu = true;  
+    }
+    if (autoclickerit_lista[1].tiedot.maara === 10){
+        if (paivitykset_lista[4].tiedot.avattu === false){
+            avoimet_paivitykset += 1;
+            autoclicker2_paivitys_1_nappi.classList.add("show");
+        }
+        paivitykset_lista[4].tiedot.avattu = true;  
+    }
+    if (autoclickerit_lista[1].tiedot.maara === 20){
+        if (paivitykset_lista[5].tiedot.avattu === false){
+            avoimet_paivitykset += 1;
+            autoclicker2_paivitys_2_nappi.classList.add("show");
+        }
+        paivitykset_lista[5].tiedot.avattu = true;  
+    }
+    if (autoclickerit_lista[2].tiedot.maara === 10){
+        if (paivitykset_lista[6].tiedot.avattu === false){
+            avoimet_paivitykset += 1;
+            autoclicker3_paivitys_1_nappi.classList.add("show");
+        }
+        paivitykset_lista[6].tiedot.avattu = true;  
+    }
+    if (autoclickerit_lista[2].tiedot.maara === 20){
+        if (paivitykset_lista[7].tiedot.avattu === false){
+            avoimet_paivitykset += 1;
+            autoclicker3_paivitys_2_nappi.classList.add("show");
+        }
+        paivitykset_lista[7].tiedot.avattu = true;  
+    }
+    if (autoclickerit_lista[3].tiedot.maara === 10){
+        if (paivitykset_lista[8].tiedot.avattu === false){
+            avoimet_paivitykset += 1;
+            autoclicker4_paivitys_1_nappi.classList.add("show");
+        }
+        paivitykset_lista[8].tiedot.avattu = true;  
+    }
+    if (autoclickerit_lista[3].tiedot.maara === 20){
+        if (paivitykset_lista[9].tiedot.avattu === false){
+            avoimet_paivitykset += 1;
+            autoclicker4_paivitys_2_nappi.classList.add("show");
+        }
+        paivitykset_lista[9].tiedot.avattu = true;  
     }
 }
-
 
 function lisaa_klikkaus(){
     pisteet += klikkauskerroin;
@@ -156,11 +227,25 @@ function osta_paivitys(nimi){
     refresh();
 }
 
-function lisaa_paivitys_1(){
+function lisaa_paivitys_1_ja_2(){
     klikkauskerroin = klikkauskerroin*2;
 }
-function lisaa_paivitys_2(){
-    klikkauskerroin = klikkauskerroin*2;
+
+
+function lisaa_autoclicker1_paivitys_1_ja_2(){
+    autoclickerit_lista[0].tiedot.pistemaara = autoclickerit_lista[0].tiedot.pistemaara*2
+}
+
+function lisaa_autoclicker2_paivitys_1_ja_2(){
+    autoclickerit_lista[1].tiedot.pistemaara = autoclickerit_lista[1].tiedot.pistemaara*2
+}
+
+function lisaa_autoclicker3_paivitys_1_ja_2(){
+    autoclickerit_lista[2].tiedot.pistemaara = autoclickerit_lista[2].tiedot.pistemaara*2
+}
+
+function lisaa_autoclicker4_paivitys_1_ja_2(){
+    autoclickerit_lista[3].tiedot.pistemaara = autoclickerit_lista[3].tiedot.pistemaara*2
 }
 
 
@@ -190,16 +275,58 @@ paivitys_kauppa_nappi.addEventListener("click", () =>{
 paivitys_1_nappi.addEventListener("click", () =>{
     paivitys_1_nappi.classList.remove("show");
     osta_paivitys("paivitys1");
-    lisaa_paivitys_1();
+    lisaa_paivitys_1_ja_2();
 });
 paivitys_2_nappi.addEventListener("click", () =>{
     paivitys_2_nappi.classList.remove("show");
     osta_paivitys("paivitys2");
-    lisaa_paivitys_2();
+    lisaa_paivitys_1_ja_2();
+});
+autoclicker1_paivitys_1_nappi.addEventListener("click", () =>{
+    autoclicker1_paivitys_1_nappi.classList.remove("show");
+    osta_paivitys("autoclicker1_paivitys1");
+    lisaa_autoclicker1_paivitys_1_ja_2();
+});
+autoclicker1_paivitys_2_nappi.addEventListener("click", () =>{
+    autoclicker1_paivitys_2_nappi.classList.remove("show");
+    osta_paivitys("autoclicker1_paivitys2");
+    lisaa_autoclicker1_paivitys_1_ja_2();
+});
+autoclicker2_paivitys_1_nappi.addEventListener("click", () =>{
+    autoclicker2_paivitys_1_nappi.classList.remove("show");
+    osta_paivitys("autoclicker2_paivitys1");
+    lisaa_autoclicker2_paivitys_1_ja_2();
+});
+autoclicker2_paivitys_2_nappi.addEventListener("click", () =>{
+    autoclicker2_paivitys_2_nappi.classList.remove("show");
+    osta_paivitys("autoclicker2_paivitys2");
+    lisaa_autoclicker2_paivitys_1_ja_2();
+});
+autoclicker3_paivitys_1_nappi.addEventListener("click", () =>{
+    autoclicker3_paivitys_1_nappi.classList.remove("show");
+    osta_paivitys("autoclicker3_paivitys1");
+    lisaa_autoclicker3_paivitys_1_ja_2();
+});
+autoclicker3_paivitys_2_nappi.addEventListener("click", () =>{
+    autoclicker3_paivitys_2_nappi.classList.remove("show");
+    osta_paivitys("autoclicker3_paivitys2");
+    lisaa_autoclicker3_paivitys_1_ja_2();
+});
+autoclicker4_paivitys_1_nappi.addEventListener("click", () =>{
+    autoclicker4_paivitys_1_nappi.classList.remove("show");
+    osta_paivitys("autoclicker4_paivitys1");
+    lisaa_autoclicker4_paivitys_1_ja_2();
+});
+autoclicker4_paivitys_2_nappi.addEventListener("click", () =>{
+    autoclicker4_paivitys_2_nappi.classList.remove("show");
+    osta_paivitys("autoclicker2_paivitys2");
+    lisaa_autoclicker4_paivitys_1_ja_2();
 });
 
 
+
 setInterval(() => {
+    lisaa_autoclickerpisteet();
     refresh();
 }, 1000);
 

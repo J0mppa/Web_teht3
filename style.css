@@ -112,3 +112,67 @@ button{
 .paivitys_2{
     display: none;
 }
+
+.autoclicker1_paivitys_1{
+    display: none;
+}
+
+.autoclicker1_paivitys_1.show{
+    display: block;
+}
+
+.autoclicker1_paivitys_2{
+    display: none;
+}
+
+.autoclicker1_paivitys_2.show{
+    display: block;
+}
+
+.autoclicker2_paivitys_1{
+    display: none;
+}
+
+.autoclicker2_paivitys_1.show{
+    display: block;
+}
+
+.autoclicker2_paivitys_2{
+    display: none;
+}
+
+.autoclicker2_paivitys_2.show{
+    display: block;
+}
+
+.autoclicker3_paivitys_1{
+    display: none;
+}
+
+.autoclicker3_paivitys_1.show{
+    display: block;
+}
+
+.autoclicker3_paivitys_2{
+    display: none;
+}
+
+.autoclicker3_paivitys_2.show{
+    display: block;
+}
+
+.autoclicker4_paivitys_1{
+    display: none;
+}
+
+.autoclicker4_paivitys_1.show{
+    display: block;
+}
+
+.autoclicker4_paivitys_2{
+    display: none;
+}
+
+.autoclicker4_paivitys_2.show{
+    display: block;
+}
