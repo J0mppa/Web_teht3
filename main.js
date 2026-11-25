@@ -10,6 +10,11 @@ const kokonaispistemaara = document.querySelector("#kokonaispisteet");
 const klikkausmaara = document.querySelector("#klikkausmaara");
 const pistenopeus = document.querySelector("#pistenopeus");
 
+const alue1 = document.querySelector(".grafiikka_1");
+const alue2 = document.querySelector(".grafiikka_2");
+const alue3 = document.querySelector(".grafiikka_3");
+const alue4 = document.querySelector(".grafiikka_4");
+
 const autoclickernappi_1 = document.querySelector(".autoclickernappi_1");
 const autoclickernappi_2 = document.querySelector(".autoclickernappi_2");
 const autoclickernappi_3 = document.querySelector(".autoclickernappi_3");
@@ -261,11 +266,18 @@ function lisaa_autoclicker4_paivitys_1_ja_2(){
     autoclickerit_lista[3].tiedot.pistemaara = autoclickerit_lista[3].tiedot.pistemaara*2
 }
 
+function lisaa_grafiikka(grafiikka, alue){
+    const symboli = document.createElement("span");
+    symboli.textContent = grafiikka;
+    alue.appendChild(symboli);
+
+}
 
 
 klikkausnappi.addEventListener("click", lisaa_klikkaus);
 autoclickernappi_1.addEventListener("click", () =>{
     osta_autoclicker("autoclicker1");
+    lisaa_grafiikka("test ", alue1);
 });
 autoclickernappi_2.addEventListener("click", () =>{
     osta_autoclicker("autoclicker2");
