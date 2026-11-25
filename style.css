@@ -26,6 +26,22 @@ body {
     background-color: transparent;
 }
 
+.animaatio{
+    animation: animaatio 0.2s;
+}
+@keyframes animaatio {
+  50% { transform: scale(1.2); }
+}
+
+#klikkausnappi{
+    width: 400px;
+    height: 400px;
+    background-image: url('pizza.png');
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
 button{
     display:block;
     margin-bottom: 10px;

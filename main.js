@@ -274,7 +274,14 @@ function lisaa_grafiikka(grafiikka, alue){
 }
 
 
-klikkausnappi.addEventListener("click", lisaa_klikkaus);
+klikkausnappi.addEventListener("click", () =>{
+    lisaa_klikkaus();
+    klikkausnappi.classList.add("animaatio");
+    setTimeout(() => {
+    klikkausnappi.classList.remove("animaatio");
+  }, 200);
+});
+
 autoclickernappi_1.addEventListener("click", () =>{
     osta_autoclicker("autoclicker1");
     alue1.classList.add("show");
