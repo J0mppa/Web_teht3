@@ -176,3 +176,27 @@ button{
 .autoclicker4_paivitys_2.show{
     display: block;
 }
+
+.autoclickernappi_2{
+    display: none;
+}
+
+.autoclickernappi_2.show{
+    display: block;
+}
+
+.autoclickernappi_3{
+    display: none;
+}
+
+.autoclickernappi_3.show{
+    display: block;
+}
+
+.autoclickernappi_4{
+    display: none;
+}
+
+.autoclickernappi_4.show{
+    display: block;
+}

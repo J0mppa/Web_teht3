@@ -79,6 +79,7 @@ function refresh() {
     tarkasta_nappi(paivitykset_lista);
     tarkasta_nappi(autoclickerit_lista);
     avaa_paivitykset();
+    avaa_autoclickerit();
     pistelukema.textContent = pisteet;
     klikkausmaara.textContent = kokonaisklikkaukset;
     avoimet_paivitykset_maara.textContent = avoimet_paivitykset;
@@ -123,6 +124,18 @@ function tarkasta_nappi(array){
             rivi.tiedot.nappi.disabled = true;
             rivi.tiedot.nappi.classList.add("disable")
         }
+    }
+}
+
+function avaa_autoclickerit(){
+    if (kokonaispisteet >= 100){
+        autoclickernappi_2.classList.add("show");
+    }
+    if (kokonaispisteet >= 300){
+        autoclickernappi_3.classList.add("show");
+    }
+    if (kokonaispisteet >= 600){
+        autoclickernappi_4.classList.add("show");
     }
 }
 
