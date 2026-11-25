@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="fi">
     <head>
-        <title>Klikkauspeli</title>
+        <meta charset="UTF-8">
+        <title>Pizza clicker</title>
         <link rel="stylesheet" href="style.css">
         <script src="main.js" defer></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,31 +19,31 @@
                 <button type="button" class="paivitykset paivitys_1">Tuplaa klikkausten arvo</button>
                 <button type="button" class="paivitykset paivitys_2">Tuplaa klikkausten arvo</button>
 
-                <button type="button" class="paivitykset autoclicker1_paivitys_1">Tuplaa autoclicker 1 nopeus</button>
-                <button type="button" class="paivitykset autoclicker1_paivitys_2">Tuplaa autoclicker 1 nopeus</button>
+                <button type="button" class="paivitykset autoclicker1_paivitys_1">Tuplaa pizzanuotioiden nopeus</button>
+                <button type="button" class="paivitykset autoclicker1_paivitys_2">Tuplaa pizzanuotioiden nopeus</button>
 
-                <button type="button" class="paivitykset autoclicker2_paivitys_1">Tuplaa autoclicker 2 nopeus</button>
-                <button type="button" class="paivitykset autoclicker2_paivitys_2">Tuplaa autoclicker 2 nopeus</button>
+                <button type="button" class="paivitykset autoclicker2_paivitys_1">Tuplaa pizzauunien nopeus</button>
+                <button type="button" class="paivitykset autoclicker2_paivitys_2">Tuplaa pizzauunien nopeus</button>
 
-                <button type="button" class="paivitykset autoclicker3_paivitys_1">Tuplaa autoclicker 3 nopeus</button>
-                <button type="button" class="paivitykset autoclicker3_paivitys_2">Tuplaa autoclicker 3 nopeus</button>
+                <button type="button" class="paivitykset autoclicker3_paivitys_1">Tuplaa pizzerioiden nopeus</button>
+                <button type="button" class="paivitykset autoclicker3_paivitys_2">Tuplaa pizzerioiden nopeus</button>
 
-                <button type="button" class="paivitykset autoclicker4_paivitys_1">Tuplaa autoclicker 4 nopeus</button>
-                <button type="button" class="paivitykset autoclicker4_paivitys_2">Tuplaa autoclicker 4 nopeus</button>
+                <button type="button" class="paivitykset autoclicker4_paivitys_1">Tuplaa kebab-eläinten nopeus</button>
+                <button type="button" class="paivitykset autoclicker4_paivitys_2">Tuplaa kebab-eläinten nopeus</button>
             </div>
 
             <div id="autoclickerkauppa">
-                <button type="button" class="autoclickerit autoclickernappi_1">Osta autoclicker 1 hinta: <strong id="hinta_autoclicker_1"></strong> 
+                <button type="button" class="autoclickerit autoclickernappi_1">Osta pizzanuotio - hinta: <strong id="hinta_autoclicker_1"></strong> 
                     Määrä: <strong id="maara_autoclicker_1"></strong></button>
                 
                 
-                <button type="button" class="autoclickerit autoclickernappi_2">Osta autoclicker 2 hinta:  <strong id="hinta_autoclicker_2"></strong>
+                <button type="button" class="autoclickerit autoclickernappi_2">Osta pizzauuni - hinta:  <strong id="hinta_autoclicker_2"></strong>
                     Määrä: <strong id="maara_autoclicker_2"></strong></button>
 
-                <button type="button" class="autoclickerit autoclickernappi_3">Osta autoclicker 3 hinta:  <strong id="hinta_autoclicker_3"></strong>
+                <button type="button" class="autoclickerit autoclickernappi_3">Osta pizzeria - hinta:  <strong id="hinta_autoclicker_3"></strong>
                     Määrä: <strong id="maara_autoclicker_3"></strong></button>
 
-                <button type="button" class="autoclickerit autoclickernappi_4">Osta autoclicker 4 hinta:  <strong id="hinta_autoclicker_4"></strong>
+                <button type="button" class="autoclickerit autoclickernappi_4">Osta kebab-eläin - hinta:  <strong id="hinta_autoclicker_4"></strong>
                     Määrä: <strong id="maara_autoclicker_4"></strong></button>
                 
                 
@@ -55,17 +56,17 @@
                 <button type="button" id="klikkausnappi"></button>
             
         
-                <p>Pisteet: <span id="pisteet">0</span></p>
-                <p>Pistettä/sekunti: <span id="pistenopeus">0</span></p>
-                <p>Kokonaispisteet: <span id="kokonaispisteet">0</span></p>
+                <p>Pizzat: <span id="pisteet">0</span></p>
+                <p>Pizzaa/sekunti: <span id="pistenopeus">0</span></p>
+                <p>Pizzoja paistettu: <span id="kokonaispisteet">0</span></p>
                 <p>Klikkauksia: <span id="klikkausmaara">0</span></p>
             </div>
             
             <div id="grafiikat">
-                <div class="alue grafiikka_1"></div>
-                <div class="alue grafiikka_2"></div>
-                <div class="alue grafiikka_3"></div>
-                <div class="alue grafiikka_4"></div>
+                <div class="alue grafiikka_1"><p>Pizzanuotiot: </p></div>
+                <div class="alue grafiikka_2"><p>Pizzauunit: </p></div>
+                <div class="alue grafiikka_3"><p>Pizzeriat: </p></div>
+                <div class="alue grafiikka_4"><p>Kebab-eläimet: </p></div>
             </div>
             
         </div>

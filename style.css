@@ -13,6 +13,7 @@ body {
 
 #pelialue{
     display: flex;
+    margin: 0 auto;
 }
 
 
@@ -203,7 +204,7 @@ button{
 }
 
 #grafiikat{
-    display: grid;
+    display: block;
 }
 
 .alue{
@@ -213,4 +214,21 @@ button{
     border: 2px solid black;
     padding: 5px;
     margin: 5px;
+    display: none;
+}
+
+.grafiikka_1.show{
+    display: block;
+}
+
+.grafiikka_2.show{
+    display: block;
+}
+
+.grafiikka_3.show{
+    display: block;
+}
+
+.grafiikka_4.show{
+    display: block;
 }

@@ -277,16 +277,23 @@ function lisaa_grafiikka(grafiikka, alue){
 klikkausnappi.addEventListener("click", lisaa_klikkaus);
 autoclickernappi_1.addEventListener("click", () =>{
     osta_autoclicker("autoclicker1");
-    lisaa_grafiikka("test ", alue1);
+    alue1.classList.add("show");
+    lisaa_grafiikka(" 🔥 ", alue1);
 });
 autoclickernappi_2.addEventListener("click", () =>{
     osta_autoclicker("autoclicker2");
+    alue2.classList.add("show");
+    lisaa_grafiikka(" 🍕 ", alue2);
 });
 autoclickernappi_3.addEventListener("click", () =>{
     osta_autoclicker("autoclicker3");
+    alue3.classList.add("show");
+    lisaa_grafiikka(" 🏠 ", alue3);
 });
 autoclickernappi_4.addEventListener("click", () =>{
     osta_autoclicker("autoclicker4");
+    alue4.classList.add("show");
+    lisaa_grafiikka(" 🐂 ", alue4);
 });
 autoclicker_kauppa_nappi.addEventListener("click", () =>{
     autoclickerkauppa.classList.remove("show");
