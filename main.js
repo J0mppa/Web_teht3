@@ -50,16 +50,16 @@ let pisteet = 0;
 let avoimet_paivitykset = 0;
 let kokonaispisteet = 0;
 const paivitykset_lista = [
-    {nimi: "paivitys1", tiedot: {hinta: 50, nappi: paivitys_1_nappi, ostettu: false, avattu: false}},
-    {nimi: "paivitys2", tiedot: {hinta: 50, nappi: paivitys_2_nappi, ostettu: false, avattu: false}},
-    {nimi: "autoclicker1_paivitys1", tiedot: {hinta: 50, nappi: autoclicker1_paivitys_1_nappi, ostettu: false, avattu: false}},
-    {nimi: "autoclicker1_paivitys2", tiedot: {hinta: 50, nappi: autoclicker1_paivitys_2_nappi, ostettu: false, avattu: false}},
-    {nimi: "autoclicker2_paivitys1", tiedot: {hinta: 50, nappi: autoclicker2_paivitys_1_nappi, ostettu: false, avattu: false}},
-    {nimi: "autoclicker2_paivitys2", tiedot: {hinta: 50, nappi: autoclicker2_paivitys_2_nappi, ostettu: false, avattu: false}},
-    {nimi: "autoclicker3_paivitys1", tiedot: {hinta: 50, nappi: autoclicker3_paivitys_1_nappi, ostettu: false, avattu: false}},
-    {nimi: "autoclicker3_paivitys2", tiedot: {hinta: 50, nappi: autoclicker3_paivitys_2_nappi, ostettu: false, avattu: false}},
-    {nimi: "autoclicker4_paivitys1", tiedot: {hinta: 50, nappi: autoclicker4_paivitys_1_nappi, ostettu: false, avattu: false}},
-    {nimi: "autoclicker4_paivitys2", tiedot: {hinta: 50, nappi: autoclicker4_paivitys_2_nappi, ostettu: false, avattu: false}}
+    {nimi: "paivitys1", tiedot: {hinta: 0, nappi: paivitys_1_nappi, ostettu: false, avattu: false}},
+    {nimi: "paivitys2", tiedot: {hinta: 0, nappi: paivitys_2_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker1_paivitys1", tiedot: {hinta: 0, nappi: autoclicker1_paivitys_1_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker1_paivitys2", tiedot: {hinta: 0, nappi: autoclicker1_paivitys_2_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker2_paivitys1", tiedot: {hinta: 0, nappi: autoclicker2_paivitys_1_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker2_paivitys2", tiedot: {hinta: 0, nappi: autoclicker2_paivitys_2_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker3_paivitys1", tiedot: {hinta: 0, nappi: autoclicker3_paivitys_1_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker3_paivitys2", tiedot: {hinta: 0, nappi: autoclicker3_paivitys_2_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker4_paivitys1", tiedot: {hinta: 0, nappi: autoclicker4_paivitys_1_nappi, ostettu: false, avattu: false}},
+    {nimi: "autoclicker4_paivitys2", tiedot: {hinta: 0, nappi: autoclicker4_paivitys_2_nappi, ostettu: false, avattu: false}}
 ];
 
 const autoclickerit_lista = [

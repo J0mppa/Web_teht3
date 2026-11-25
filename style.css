@@ -1,13 +1,16 @@
 body {
-    background-color: lightblue;
+    background-color: rgb(255, 255, 255);
     margin:0;
     display: flex;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+
 }
 
 #kauppa{
     width: 20%;
     background-color: rgba(195, 135, 25, 0.878);
-    border-right: 2px solid black;
+    border: 2px solid black;
     min-height:100vh;
 }
 
@@ -50,6 +53,7 @@ button{
 .kauppa{
     background-color: red;
     border: 1px solid black;
+    border-top: none;
     color: white;
     padding: 20px 10px;
     text-align: center;
