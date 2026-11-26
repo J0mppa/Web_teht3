@@ -23,7 +23,7 @@ body {
 #klikkausnappi{
     width: 400px;
     height: 400px;
-    background-image: url('pizza.png');
+    background-image: url('pizza.webp');
     border: none;
     cursor: pointer;
     background-color: transparent;
@@ -34,15 +34,6 @@ body {
 }
 @keyframes animaatio {
   50% { transform: scale(1.2); }
-}
-
-#klikkausnappi{
-    width: 400px;
-    height: 400px;
-    background-image: url('pizza.png');
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
 }
 
 button{
