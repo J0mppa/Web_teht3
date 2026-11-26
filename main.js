@@ -250,21 +250,12 @@ function lisaa_paivitys_1_ja_2(){
 }
 
 
-function lisaa_autoclicker1_paivitys_1_ja_2(){
-    autoclickerit_lista[0].tiedot.pistemaara = autoclickerit_lista[0].tiedot.pistemaara*2
+function lisaa_autoclicker_paivitys_1_ja_2(autoclicker_nimi){
+    let tiedot = hae_tiedot(autoclicker_nimi, autoclickerit_lista);
+    tiedot.pistemaara = tiedot.pistemaara*2;
+    refresh();
 }
 
-function lisaa_autoclicker2_paivitys_1_ja_2(){
-    autoclickerit_lista[1].tiedot.pistemaara = autoclickerit_lista[1].tiedot.pistemaara*2
-}
-
-function lisaa_autoclicker3_paivitys_1_ja_2(){
-    autoclickerit_lista[2].tiedot.pistemaara = autoclickerit_lista[2].tiedot.pistemaara*2
-}
-
-function lisaa_autoclicker4_paivitys_1_ja_2(){
-    autoclickerit_lista[3].tiedot.pistemaara = autoclickerit_lista[3].tiedot.pistemaara*2
-}
 
 function lisaa_grafiikka(grafiikka, alue){
     const symboli = document.createElement("span");
@@ -324,42 +315,42 @@ paivitys_2_nappi.addEventListener("click", () =>{
 autoclicker1_paivitys_1_nappi.addEventListener("click", () =>{
     autoclicker1_paivitys_1_nappi.classList.remove("show");
     osta_paivitys("autoclicker1_paivitys1");
-    lisaa_autoclicker1_paivitys_1_ja_2();
+    lisaa_autoclicker_paivitys_1_ja_2("autoclicker1");
 });
 autoclicker1_paivitys_2_nappi.addEventListener("click", () =>{
     autoclicker1_paivitys_2_nappi.classList.remove("show");
     osta_paivitys("autoclicker1_paivitys2");
-    lisaa_autoclicker1_paivitys_1_ja_2();
+    lisaa_autoclicker_paivitys_1_ja_2("autoclicker1");
 });
 autoclicker2_paivitys_1_nappi.addEventListener("click", () =>{
     autoclicker2_paivitys_1_nappi.classList.remove("show");
     osta_paivitys("autoclicker2_paivitys1");
-    lisaa_autoclicker2_paivitys_1_ja_2();
+    lisaa_autoclicker_paivitys_1_ja_2("autoclicker2");
 });
 autoclicker2_paivitys_2_nappi.addEventListener("click", () =>{
     autoclicker2_paivitys_2_nappi.classList.remove("show");
     osta_paivitys("autoclicker2_paivitys2");
-    lisaa_autoclicker2_paivitys_1_ja_2();
+    lisaa_autoclicker_paivitys_1_ja_2("autoclicker2");
 });
 autoclicker3_paivitys_1_nappi.addEventListener("click", () =>{
     autoclicker3_paivitys_1_nappi.classList.remove("show");
     osta_paivitys("autoclicker3_paivitys1");
-    lisaa_autoclicker3_paivitys_1_ja_2();
+    lisaa_autoclicker_paivitys_1_ja_2("autoclicker3");
 });
 autoclicker3_paivitys_2_nappi.addEventListener("click", () =>{
     autoclicker3_paivitys_2_nappi.classList.remove("show");
     osta_paivitys("autoclicker3_paivitys2");
-    lisaa_autoclicker3_paivitys_1_ja_2();
+    lisaa_autoclicker_paivitys_1_ja_2("autoclicker3");
 });
 autoclicker4_paivitys_1_nappi.addEventListener("click", () =>{
     autoclicker4_paivitys_1_nappi.classList.remove("show");
     osta_paivitys("autoclicker4_paivitys1");
-    lisaa_autoclicker4_paivitys_1_ja_2();
+    lisaa_autoclicker_paivitys_1_ja_2("autoclicker4");
 });
 autoclicker4_paivitys_2_nappi.addEventListener("click", () =>{
     autoclicker4_paivitys_2_nappi.classList.remove("show");
     osta_paivitys("autoclicker2_paivitys2");
-    lisaa_autoclicker4_paivitys_1_ja_2();
+    lisaa_autoclicker_paivitys_1_ja_2("autoclicker4");
 });
 
 
